@@ -4,4 +4,4 @@ from .models import Section
 class SimpleSectionSerializer(serializers.ModelSerializer):
     class Meta:
         model = Section
-        fields = ['name','image']
+        fields = ['name']

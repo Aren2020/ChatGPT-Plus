@@ -12,7 +12,7 @@ from backend_api.actions.slidecreater import slidegptmaker
 from backend_api.actions.translator import translateTo
 from backend_api.actions.namegenerator import nameGenerator
 
-openai.api_key = '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'
+openai.api_key = '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'
 
 def getcontent(message):
     msgs = []
@@ -134,3 +134,15 @@ def grammarCorrection(text,language='English'):
         max_tokens=15000
     )
     return response, 'text'
+
+def informatics(problem,language = 'c++'):
+    problem = translateTo(problem,'en',source = 'auto')
+    message = f'solve this problem {problem}'
+    if language == 'c++':
+        message += 'in c++ use using namespace std;.'
+    else:
+        message += f'in {language}.'
+    message += 'Dont use explanations.'
+
+    savepath = wordCreater(getcontent(message)[0].split('\n'),'en')
+    return savepath,'docx'

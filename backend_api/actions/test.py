@@ -176,4 +176,11 @@ arr = ['a','b','c']
 def simbols(a,b,c='d'):
     print(a,b,c)
 
-simbols(*arr)
+from gpt import getcontent
+from wordcreater import wordCreater
+
+wordCreater(getcontent('''
+Given a natural number n. 
+Write a function that determines whether n is the square of a natural number, true/false.
+in c++ use using namespace std;.
+Dont use explanations.''')[0].split('\n'),'en')

@@ -3,7 +3,7 @@ from .models import Section
 
 @admin.register(Section)
 class SectionAdmin(admin.ModelAdmin):
-    list_display = ['name','slug','image','id',]
+    list_display = ['name','slug','id',]
     prepopulated_fields = {'slug': ('name',)}
 
 

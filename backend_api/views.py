@@ -15,6 +15,7 @@ from backend_api.actions.gpt import (getcontent,
                                      getslidecontent,
                                      translateTo,
                                      communityProjectCreator,
+                                     informatics
                                     )
 from deep_translator import GoogleTranslator
 
@@ -29,6 +30,7 @@ FUNC_FOR_MODELS = {
     8: grammarCorrection,
     9: translateTo,
     10: communityProjectCreator,
+    11: informatics
 }
 
 FORMAT_CONTENT_TYPES = {
