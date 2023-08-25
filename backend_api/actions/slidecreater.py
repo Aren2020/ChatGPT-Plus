@@ -18,10 +18,12 @@ def first_page(title,name,teacher,grade,language):
     slide = root.slides.add_slide(SLIDE_LAYOUT)
 
     # shir logo
+    r'''
     imgpath = r'C:\Users\User\Downloads\shirlogo.jpg'
     img = slide.shapes.add_picture(
                 imgpath,
                 Inches(0.01),Inches(0.35))
+    '''
 
     # title 
     top = width = height = Inches(2)
@@ -83,7 +85,7 @@ def last_page(links,language):
             p.font.underline = True
         
 def slidegptmaker(data,links,language, 
-                  globsearch=r'C:\Users\User\Documents\html\задачник по html и css\pictures\*',
+                  globsearch=r'',
                   title = 'global warming',name = 'Name',
                   teacher = 'Teacher', grade = 'Grade',
                   ):
