@@ -31,6 +31,12 @@ FUNC_FOR_MODELS = {
     10: communityProjectCreator,
 }
 
+FORMAT_CONTENT_TYPES = {
+    'pptx': 'application/vnd.openxmlformats-officedocument.presentationml.presentation',
+    'docx': 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+    'mp3': 'audio/mpeg'
+}
+
 class SectionDetailsView(APIView):
     def get(self,request,slug = 'gpt-response'):
         output = [
@@ -63,20 +69,10 @@ class SectionDetailsView(APIView):
         data,format = action(*arr) 
         if format == 'text':
             return Response({'message': data})  
-        elif format == 'pptx':
-            with open(data, 'rb') as file:
-                response = HttpResponse(file.read(), content_type='application/vnd.openxmlformats-officedocument.presentationml.presentation')
-                response['Content-Disposition'] = f'attachment; filename="output.pptx"'
-                return response
-        elif format == 'docx':
-            with open(data, 'rb') as file:
-                response = HttpResponse(file.read(), content_type='application/vnd.openxmlformats-officedocument.wordprocessingml.document')
-                response['Content-Disposition'] = f'attachment; filename="output.docx"'
-                return response
         else:
             with open(data, 'rb') as file:
-                response = HttpResponse(file.read(), content_type='audio/mpeg')
-                response['Content-Disposition'] = f'attachment; filename="output.mp3"'
+                response = HttpResponse(file.read(), content_type = FORMAT_CONTENT_TYPES[format])
+                response['Content-Disposition'] = f'attachment; filename="output.{format}"'
                 return response
 
 class SectionHomeView(generics.ListAPIView):
