@@ -1,0 +1,89 @@
+from django.shortcuts import render
+from rest_framework.views import APIView
+from .models import Section
+from rest_framework.response import Response
+from django.http import HttpResponse
+from .serializer import SimpleSectionSerializer
+from rest_framework import generics
+from backend_api.actions.gpt import (getcontent,
+                                     essaywriter,
+                                     personalprojectwriter,
+                                     text_to_speech,
+                                     imageGenerator,
+                                     grammarCorrection,
+                                     speech_to_text,
+                                     getslidecontent,
+                                     translateTo,
+                                     communityProjectCreator,
+                                    )
+from deep_translator import GoogleTranslator
+
+FUNC_FOR_MODELS = {
+    1: personalprojectwriter, # gpt
+    2: essaywriter,
+    3: imageGenerator,
+    4: getcontent,
+    5: getslidecontent,
+    6: text_to_speech,
+    7: speech_to_text,
+    8: grammarCorrection,
+    9: translateTo,
+    10: communityProjectCreator,
+}
+
+class SectionDetailsView(APIView):
+    def get(self,request,slug = 'gpt-response'):
+        output = [
+            {
+                'sections': [],
+            },
+        ]
+        for section in Section.objects.all():
+            section_config = {
+                'name': section.name,
+            }
+            if section.slug == 'gpt-response' and slug == 'gpt-response':
+                section_config['active'] = '.'
+            else:
+                section_config['active'] = section.slug
+            output[0]['sections'].append(section_config)
+        return Response(output)
+
+    def post(self,request,slug = 'gpt-response'): 
+        arr = []
+        for key in request.data:
+            if key != 'active':
+                arr.append(request.data.get(key))
+            else:
+                slug = request.data.get('active')
+        
+        section = Section.objects.get(slug = slug)
+        action = FUNC_FOR_MODELS[section.pk]
+        
+        data,format = action(*arr) 
+        if format == 'text':
+            return Response({'message': data})  
+        elif format == 'pptx':
+            with open(data, 'rb') as file:
+                response = HttpResponse(file.read(), content_type='application/vnd.openxmlformats-officedocument.presentationml.presentation')
+                response['Content-Disposition'] = f'attachment; filename="output.pptx"'
+                return response
+        elif format == 'docx':
+            with open(data, 'rb') as file:
+                response = HttpResponse(file.read(), content_type='application/vnd.openxmlformats-officedocument.wordprocessingml.document')
+                response['Content-Disposition'] = f'attachment; filename="output.docx"'
+                return response
+        else:
+            with open(data, 'rb') as file:
+                response = HttpResponse(file.read(), content_type='audio/mpeg')
+                response['Content-Disposition'] = f'attachment; filename="output.mp3"'
+                return response
+
+class SectionHomeView(generics.ListAPIView):
+    queryset = Section.objects.all()
+    serializer_class = SimpleSectionSerializer
+
+class SupportedLanguagesView(APIView):
+    def get(self,request):
+        output = {'supported_languages': GoogleTranslator().get_supported_languages(as_dict=True)}
+        return Response(output)
