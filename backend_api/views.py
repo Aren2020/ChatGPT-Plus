@@ -11,7 +11,7 @@ from backend_api.actions.gpt import (getcontent,
                                      text_to_speech,
                                      imageGenerator,
                                      grammarCorrection,
-                                     speech_to_text,
+                                     # speech_to_text,
                                      getslidecontent,
                                      translateTo,
                                      communityProjectCreator,
@@ -20,23 +20,23 @@ from backend_api.actions.gpt import (getcontent,
 from deep_translator import GoogleTranslator
 
 FUNC_FOR_MODELS = {
-    1: personalprojectwriter, # gpt
-    2: essaywriter,
+    1: getcontent, # gpt
+    2: personalprojectwriter,
     3: imageGenerator,
-    4: getcontent,
-    5: getslidecontent,
-    6: text_to_speech,
-    7: speech_to_text,
-    8: grammarCorrection,
-    9: translateTo,
-    10: communityProjectCreator,
-    11: informatics
+    4: getslidecontent,
+    5: essaywriter,
+    6: communityProjectCreator,
+    # 7: speech_to_text,
+    7: translateTo,
+    8: text_to_speech,
+    9: informatics,
+    10: grammarCorrection,
 }
 
 FORMAT_CONTENT_TYPES = {
     'pptx': 'application/vnd.openxmlformats-officedocument.presentationml.presentation',
     'docx': 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-    'mp3': 'audio/mpeg'
+    'mp3': 'audio/mpeg',
 }
 
 class SectionDetailsView(APIView):

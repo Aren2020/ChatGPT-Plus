@@ -28,7 +28,7 @@ def getcontent(message):
     content = response['choices'][0]['message']['content']
     return content,'text'
 
-def essaywriter(title,words,language):
+def essaywriter(title,words,language='en'):
     message = f'''Write a {words}-word essay about {title} with this criteria. 
     The essay must contain citations.
     The essay must contain the research question. 
@@ -40,7 +40,7 @@ def essaywriter(title,words,language):
     content = wordCreater(response.split('\n'),language)
     return content, type
 
-def personalprojectwriter(title,language):
+def personalprojectwriter(title,language='en'):
     message =  '''I am writing my personal project about a %s.
          It contains  criteria (A.1, A.2, A.3, B.1, B.2, B.3, C.1, C.2). 
          The A.1 criteria should contain My Learning Goal and Personal Interests.
@@ -85,7 +85,7 @@ def communityProjectCreator(title,language = 'en'):
     content = wordCreater(response.split('\n'),language)
     return content, type
     
-def getslidecontent(title,language):
+def getslidecontent(title,language='en'):
     message = f'''create slideshow with this strict criteria about {title}.
     SlideShow should contain 5 slides.Each slide start with title then come description and one picture.
     Each description should contain 25 words
@@ -99,6 +99,7 @@ def getslidecontent(title,language):
     url = slidegptmaker(content,links,language,title=title)
     return url, 'pptx'
 
+r'''
 def speech_to_text(file,language = 'en'):
     engine = sr.Recognizer()
     mp3Filename = file.replace('\\','\\\\')
@@ -106,6 +107,7 @@ def speech_to_text(file,language = 'en'):
         audio = engine.record(source)
     text = engine.recognize_google(audio)
     return text, 'text'
+'''
 
 def text_to_speech(text,language = 'en'):
     speech = gTTS(text = text, lang = language, slow = False)
