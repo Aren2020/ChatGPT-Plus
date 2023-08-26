@@ -13,7 +13,7 @@ from backend_api.actions.translator import translateTo
 from backend_api.actions.namegenerator import nameGenerator
 
 openai.api_key = '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'
-
+# git commit 
 def getcontent(message):
     msgs = []
     msgs.append(
