@@ -169,7 +169,6 @@ def slidegptmaker(data,language,globsearch=r'C:\Users\User\Documents\html\зад
     return savename
 
 #print(last_page(['global warming','Aren','Arega','1036']))
-'''
 
 arr = ['a','b','c']
 
@@ -179,8 +178,37 @@ def simbols(a,b,c='d'):
 from gpt import getcontent
 from wordcreater import wordCreater
 
-wordCreater(getcontent('''
+wordCreater(getcontent(
 Given a natural number n. 
 Write a function that determines whether n is the square of a natural number, true/false.
 in c++ use using namespace std;.
-Dont use explanations.''')[0].split('\n'),'en')
+Dont use explanations.)[0].split('\n'),'en')
+
+name = 'essaywriter'
+dict = {
+    'slidecreator': {
+        'lang': True,
+        'words': False,
+        'title': True
+    },
+    'essaywriter': {
+        'lang': True,
+        'words': True,
+        'title': True
+    }
+}
+
+for item in dict:
+    if item['title']:
+        print('add title')
+
+for item in dict:
+    if item['words']:
+        print('words')
+'''
+
+name = 'essaywriter'
+names = ['essaywriter','slidecretor']
+
+if name in names:
+    print('add params')

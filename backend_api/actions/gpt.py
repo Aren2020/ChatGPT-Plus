@@ -15,6 +15,7 @@ from backend_api.actions.namegenerator import nameGenerator
 openai.api_key = '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'
 # git commit 
 def getcontent(message):
+    message = translateTo(message,'en',source='auto')
     msgs = []
     msgs.append(
             {'role':'user',
@@ -144,7 +145,7 @@ def informatics(problem,language = 'c++'):
         message += 'in c++ use using namespace std;.'
     else:
         message += f'in {language}.'
-    message += 'Dont use explanations.'
+    message += 'Dont use explanations. Give one solution example.'
 
     savepath = wordCreater(getcontent(message)[0].split('\n'),'en')
     return savepath,'docx'
