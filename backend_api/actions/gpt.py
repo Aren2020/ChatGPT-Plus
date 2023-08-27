@@ -12,10 +12,10 @@ from backend_api.actions.slidecreater import slidegptmaker
 from backend_api.actions.translator import translateTo
 from backend_api.actions.namegenerator import nameGenerator
 
-openai.api_key = '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'
+openai.api_key = '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'
 # git commit 
 def getcontent(message):
-    message = translateTo(message,'en',source='auto')
+    message = translateTo(message,'en',source='auto')[0]
     msgs = []
     msgs.append(
             {'role':'user',
@@ -29,7 +29,7 @@ def getcontent(message):
     content = response['choices'][0]['message']['content']
     return content,'text'
 
-def essaywriter(title,words,language='en'):
+def essaywriter(title,words=400,language='en'):
     message = f'''Write a {words}-word essay about {title} with this criteria. 
     The essay must contain citations.
     The essay must contain the research question. 
