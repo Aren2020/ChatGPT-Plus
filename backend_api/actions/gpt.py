@@ -1,7 +1,5 @@
 import openai
 import os
-import speech_recognition as sr
-import os
 from gtts import gTTS
 
 

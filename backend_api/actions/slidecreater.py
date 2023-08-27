@@ -9,7 +9,6 @@ import glob
 import time
 import os
 
-
 root = Presentation()
 SLIDE_LAYOUT = root.slide_layouts[6] 
 
