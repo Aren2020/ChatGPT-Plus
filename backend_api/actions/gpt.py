@@ -2,7 +2,6 @@ import openai
 import os
 from gtts import gTTS
 
-
 from backend_api.actions.wordcreater import wordCreater
 from backend_api.actions.handlegptslide import handleGptSlide,splitlinks
 from backend_api.actions.removetrashes import removeTrash
