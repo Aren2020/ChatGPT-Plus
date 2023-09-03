@@ -5,7 +5,7 @@ port = 587
 
 class10 = [
     
-    # physics math 46
+    # Physics Math 46
     'avagyanelen@shirakatsy.am',
     'avetyangarnik@shirakatsy.am', 
     'badalyandavit@shirakatsy.am', 
@@ -28,7 +28,7 @@ class10 = [
     'tatyanrouben@shirakatsy.am', 
     'tuhkaryannarekvan@shirakatsy.am',
 
-    # physics math 47
+    # Physics Math 47
     'aghajanyanarsen@shirakatsy.am',
     'babayanyuri@shirakatsy.am',
     'badalyanastghik@shirakatsy.am',
@@ -51,7 +51,7 @@ class10 = [
     'vanyandavit@shirakatsy.am',
     'zargaryantatev@shirakatsy.am',
     
-    # social science 45
+    # Social Science 45
     'aghabalyannarek@shirakatsy.am', 
     'asrievaelen@shirakatsy.am', 
     'baghdasaryanviktoria@shirakatsy.am', 
@@ -72,7 +72,7 @@ class10 = [
     'tumasyanmariam@shirakatsy.am', 
     'tunyannarek@shirakatsy.am',
 
-    # economics 41
+    # Economics 41
     'adilkhanyanyeva@shirakatsy.am', 
     'alikhanyanrobert@shirakatsy.am', 
     'arajyanastghik@shirakatsy.am', 
@@ -93,7 +93,7 @@ class10 = [
     'suqiasyansyuzi@shirakatsy.am', 
     'vardanyansofi@shirakatsy.am',
 
-    # economics 42
+    # Economics 42
     'abrahamyansergey@shirakatsy.am', 
     'adamyangarri@shirakatsy.am', 
     'alikhanyanhayk@shirakatsy.am', 
@@ -115,7 +115,7 @@ class10 = [
     'vardanyanvane@shirakatsy.am', 
     'voskanyanmariam1@shirakatsy.am',
 
-    # economics 43
+    # Economics 43
     'baghdasaryannarek@shirakatsy.am', 
     'davtyanagapi@shirakatsy.am', 
     'grigoryanvigen@shirakatsy.am', 
@@ -136,7 +136,7 @@ class10 = [
     'varderesyanavetis@shirakatsy.am', 
     'yeghoyantigran@shirakatsy.am',
 
-    # science 44
+    # Science 44
     'apresyanmilena@shirakatsy.am', 
     'charkhchyaninesa@shirakatsy.am', 
     'gasparyannare@shirakatsy.am', 
@@ -157,8 +157,289 @@ class10 = [
     'yeghoyananna@shirakatsy.am'
 ]
 
-tos = [class10,]
+class9 = [
+    
+    # Group 951
+    'araqelyananahit@shirakatsy.am', 
+    'baghdasaryanarmine@shirakatsy.am',
+    'balayandavit@shirakatsy.am',
+    'guloyanmaria@shirakatsy.am', 
+    'hovhannisyanshushanna@shirakatsy.am', 
+    'hovsepyansimon@shirakatsy.am', 
+    'israyelyandavit@shirakatsy.am', 
+    'manukyangor@shirakatsy.am', 
+    'melikyannarek@shirakatsy.am', 
+    'momjyandavit@shirakatsy.am', 
+    'mosikyantigran@shirakatsy.am', 
+    'najaryannarek@shirakatsy.am', 
+    'naljyananita@shirakatsy.am', 
+    'nazaryanarno@shirakatsy.am', 
+    'nikiforovaanna@shirakatsy.am', 
+    'piliposyangor@shirakatsy.am', 
+    'shamirzayanhripsime@shirakatsy.am', 
+    'vardazaryanelen@shirakatsy.am',
 
-temp = []
+    # Group 952
+    'apinyandavit@shirakatsy.am', 
+    'aslanyanmari@shirakatsy.am', 
+    'grigoryangrigori1@shirakatsy.am', 
+    'grigoryanmargarita@shirakatsy.am', 
+    'harutyunyangagik@shirakatsy.am', 
+    'hayrapetyanarthur@shirakatsy.am', 
+    'hovhannisyanserine@shirakatsy.am', 
+    'karapetyanyana@shirakatsy.am', 
+    'manucharyananahit@shirakatsy.am', 
+    'manukyananahit1@shirakatsy.am', 
+    'manvelyanmiqayel@shirakatsy.am', 
+    'martirosyansargis@shirakatsy.am', 
+    'mkrtchyansergh@shirakatsy.am', 
+    'muradyangayane@shirakatsy.am', 
+    'nazoyanhakob@shirakatsy.am', 
+    'poghosyaneduard@shirakatsy.am', 
+    'poghosyannane@shirakatsy.am', 
+    'sahakyansuren1@shirakatsy.am', 
+    'tarverdyanangelina@shirakatsy.am',
+
+    # Group 953
+    'adilkhanyanviktoria@shirakatsy.am', 
+    'arakelyansamvel1@shirakatsy.am', 
+    'danghyannarek@shirakatsy.am', 
+    'davtyanangelina@shirakatsy.am', 
+    'grigoryananjela@shirakatsy.am', 
+    'harutyunyanruben@shirakatsy.am', 
+    'markosyanareg@shirakatsy.am', 
+    'martirosyanaram@shirakatsy.am', 
+    'meghryanjenya@shirakatsy.am', 
+    'mkrtumyanmihran@shirakatsy.am', 
+    'nahapetyanmaria@shirakatsy.am', 
+    'nalbandyansargis@shirakatsy.am', 
+    'sarkissiansevan@shirakatsy.am', 
+    'shahnazaryanagnesa@shirakatsy.am', 
+    'shakhpazyantigran@shirakatsy.am', 
+    'tertachatyanani@shirakatsy.am', 
+    'tovmasyannatali@shirakatsy.am', 
+    'tsaturyandiana@shirakatsy.am',
+
+    # Group 954
+    'alakhverdyanhakob@shirakatsy.am', 
+    'arabyannarek1@shirakatsy.am', 
+    'berberyanmiqayel@shirakatsy.am', 
+    'hambardzumyanrafayel@shirakatsy.am', 
+    'hayrapetyanarpi@shirakatsy.am', 
+    'iboyannare@shirakatsy.am', 
+    'javadyanyelena@shirakatsy.am', 
+    'mamikonyangegham@shirakatsy.am', 
+    'manasyanlilit@shirakatsy.am', 
+    'mkrtchyanlilit1@shirakatsy.am', 
+    'mkrticheanaram@shirakatsy.am', 
+    'movsesyannare@shirakatsy.am', 
+    'nunushyanmaria@shirakatsy.am', 
+    'poghosyanarsen1@shirakatsy.am', 
+    'sarkisyanviktorya@shirakatsy.am', 
+    'shimshiryanaram@shirakatsy.am', 
+    'simonyanarpi1@shirakatsy.am', 
+    'tadevosyanhasmik@shirakatsy.am', 
+    'torosyannare@shirakatsy.am',
+
+    # Group 955
+    'avetisyanani@shirakatsy.am', 
+    'bezoyanmonika@shirakatsy.am', 
+    'gevorgyannarek@shirakatsy.am', 
+    'hakobyanlana@shirakatsy.am', 
+    'haroyananahit@shirakatsy.am', 
+    'harutyunyansofi@shirakatsy.am', 
+    'mkrtchyannarek@shirakatsy.am', 
+    'mkrtchyanyuri@shirakatsy.am', 
+    'mkrticheannarek@shirakatsy.am', 
+    'mnatsakanyanshirak@shirakatsy.am', 
+    'nalbandyanlilit@shirakatsy.am', 
+    'nanyanevelina@shirakatsy.am', 
+    'stepanyansamvel@shirakatsy.am', 
+    'suqiasyanmaria@shirakatsy.am', 
+    'tergrigoryanara@shirakatsy.am', 
+    'torosyangor@shirakatsy.am', 
+    'vantsyanmane@shirakatsy.am', 
+    'vanyansofi1@shirakatsy.am',
+
+    # Group 956
+    'aghayantsartur@shirakatsy.am', 
+    'araqelyaneva@shirakatsy.am', 
+    'danagulyangayane@shirakatsy.am', 
+    'danielyaneva@shirakatsy.am', 
+    'danielyanmariam@shirakatsy.am', 
+    'gharibyanarpa@shirakatsy.am', 
+    'hakobyantigran@shirakatsy.am', 
+    'hovhannisyanani2@shirakatsy.am', 
+    'ignatyanarman@shirakatsy.am', 
+    'mehrabyanshant@shirakatsy.am', 
+    'meliqsetyanaleksandr@shirakatsy.am', 
+    'minasyangor@shirakatsy.am', 
+    'nazanyannane@shirakatsy.am', 
+    'safaryanedita@shirakatsy.am', 
+    'saghatelyanvardan@shirakatsy.am', 
+    'vardazaryanmark@shirakatsy.am', 
+    'zaqaryanviktoria@shirakatsy.am', 
+    'zatikyansuren@shirakatsy.am',
+
+    # Group 957
+    'asiryannare@shirakatsy.am', 
+    'azaryanalen@shirakatsy.am', 
+    'babayanmari@shirakatsy.am', 
+    'baghdyanmarina@shirakatsy.am', 
+    'eloyanarshel@shirakatsy.am', 
+    'gabrielyanmeri@shirakatsy.am', 
+    'galstyanariana@shirakatsy.am', 
+    'gevorgyanlevon1@shirakatsy.am',
+    'gevorgyansofya@shirakatsy.am', 
+    'jalavyanmane@shirakatsy.am', 
+    'khachatryanmaria@shirakatsy.am', 
+    'meliqsetyangor@shirakatsy.am', 
+    'minasyaneliza@shirakatsy.am', 
+    'mkhitaryanqnarik@shirakatsy.am', 
+    'muradyanmane@shirakatsy.am', 
+    'nersisyanarik@shirakatsy.am', 
+    'vatyanhayk@shirakatsy.am', 
+    'zaqaryanmane@shirakatsy.am',
+
+    # Group 958
+    'arakelyanella@shirakatsy.am', 
+    'araqelyanvahagn@shirakatsy.am', 
+    'armenyanarsine@shirakatsy.am', 
+    'babayannare@shirakatsy.am', 
+    'barseghyanmane@shirakatsy.am',
+    'davtyanmilena@shirakatsy.am', 
+    'gharibyanhakob@shirakatsy.am', 
+    'ghazaryanlilit@shirakatsy.am', 
+    'hambardzumyananush@shirakatsy.am', 
+    'harutyunyanavetis@shirakatsy.am', 
+    'karapetyananna1@shirakatsy.am', 
+    'karapetyansona@shirakatsy.am', 
+    'khachatryanaraksya@shirakatsy.am', 
+    'papoyansofi@shirakatsy.am', 
+    'petrosyanartur@shirakatsy.am', 
+    'shegiyantigran@shirakatsy.am', 
+    'simonyananahit@shirakatsy.am', 
+    'sultanyannare@shirakatsy.am',
+]
+
+class11 = [
+    # Economics 31
+    'aghagumyandiana@shirakatsy.am', 
+    'anzariarman@shirakatsy.am', 
+    'arushanyanarmen.artsakh@shirakatsy.am', 
+    'avagyanlaura@shirakatsy.am', 
+    'baghdasaryanazatuhi@shirakatsy.am', 
+    'bulanikyanovsanna@shirakatsy.am', 
+    'cynthiasousani@shirakatsy.am', 
+    'danielyanastina@shirakatsy.am', 
+    'daryanmark@shirakatsy.am', 
+    'davtyanaleksandr@shirakatsy.am', 
+    'gabrielyanhrachya@shirakatsy.am', 
+    'galstyanlilit@shirakatsy.am', 
+    'grigoryanlilia@shirakatsy.am', 
+    'halebyandaniela@shirakatsy.am', 
+    'hovhannisyaniren@shirakatsy.am', 
+    'karapetyanerik@shirakatsy.am', 
+    'manasaryanjulietta@shirakatsy.am', 
+    'manvelyanmurad@shirakatsy.am', 
+    'mashakaryanrafayel@shirakatsy.am', 
+    'mkrdichyanhovan@shirakatsy.am', 
+    'papikyanelen@shirakatsy.am', 
+    'petrosyannare1@shirakatsy.am', 
+    'poghosyanhakob@shirakatsy.am', 
+    'sargsyanarmen@shirakatsy.am', 
+    'sargsyanhasmik@shirakatsy.am', 
+    'saryananna@shirakatsy.am', 
+    'shirvanyankatarina@shirakatsy.am', 
+    'tadevosyaninesa@shirakatsy.am', 
+    'tovmasyanmari@shirakatsy.am', 
+    'vardanyantsoghik@shirakatsy.am', 
+    'vatyanlevon@shirakatsy.am',
+
+    # Science 32
+    'davtyanelen2@shirakatsy.am', 
+    'galstyanemma@shirakatsy.am', 
+    'galstyanmaria@shirakatsy.am', 
+    'grigoryanariana@shirakatsy.am', 
+    'harutyunyanani1@shirakatsy.am', 
+    'khachatryaneduard@shirakatsy.am', 
+    'khachaturyanmeri@shirakatsy.am', 
+    'kocharyanmaria@shirakatsy.am', 
+    'poghosyanarpine@shirakatsy.am', 
+    'saiyanemma@shirakatsy.am', 
+    'vardanyandavid1@shirakatsy.am', 
+    'yesayanelen@shirakatsy.am',
+
+    # Social Science 33
+    'avetisyangor@shirakatsy.am', 
+    'eloyanandranik@shirakatsy.am', 
+    'gabrielyanasya@shirakatsy.am', 
+    'galstyansuren@shirakatsy.am', 
+    'guloyanvlad@shirakatsy.am', 
+    'gyozhgyanelina@shirakatsy.am', 
+    'hayrapetyanhovhannes@shirakatsy.am', 
+    'hovhannisyansatenik@shirakatsy.am', 
+    'karapetyanhenrik@shirakatsy.am', 
+    'karapetyanmeri@shirakatsy.am', 
+    'khachatryanelen@shirakatsy.am', 
+    'petrosyandavid@shirakatsy.am', 
+    'petrosyannatali@shirakatsy.am',
+
+    # Physics Math 34
+    'aghalovyanani@shirakatsy.am', 
+    'aleqsanyantigran@shirakatsy.am', 
+    'allahverdyanaren@shirakatsy.am', 
+    'antonyannare@shirakatsy.am', 
+    'avetisyanangelina@shirakatsy.am', 
+    'bangoyandavit@shirakatsy.am', 
+    'gazanchyangarni@shirakatsy.am', 
+    'gijlaryanrobert@shirakatsy.am', 
+    'hakhverdyanastghik@shirakatsy.am', 
+    'hakobyanmari@shirakatsy.am', 
+    'harutyunyanrobert@shirakatsy.am', 
+    'malkhasyanmari@shirakatsy.am', 
+    'markosyanartashes@shirakatsy.am', 
+    'rafayelyantigran@shirakatsy.am', 
+    'simonyanvahan@shirakatsy.am', 
+    'vardumyankarmen@shirakatsy.am', 
+    'yeganyanarsen@shirakatsy.am',
+    
+    # Art 35
+    'ananyanani@shirakatsy.am',
+    'muradyanmeri@shirakatsy.am', 
+    'hindoyanarmen@shirakatsy.am', 
+    'khachatryangevorg@shirakatsy.am', 
+    'khemchyaneva@shirakatsy.am', 
+    'sargsyansona1@shirakatsy.am', 
+    'stambolyanhayk@shirakatsy.am'
+]
+
+tos = []
+tos.extend(class9)
+tos.extend(class10)
+tos.extend(class11)
+
+temp = [   
+    'ananyanani@shirakatsy.am'
+    'muradyanmeri@shirakatsy.am',
+    'khemchyaneva@shirakatsy.am',
+    'sargsyansona1@shirakatsy.am',
+    'stambolyanhayk@shirakatsy.am',
+    'hindoyanarmen@shirakatsy.am',
+    'khachatryangevorg@shirakatsy.am',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+]
 
 print(sorted(list(set(temp))))
+print(len(class11))
