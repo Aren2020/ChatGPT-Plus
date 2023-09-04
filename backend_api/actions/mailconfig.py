@@ -1,4 +1,4 @@
-myaddress = 'ShirSpamer@outlook.com'
+myaddress = 'shirhacks@outlook.com'
 smtppswd = '#Aren2021'
 smtpservername = 'smtp-mail.outlook.com'
 port = 587
@@ -655,14 +655,12 @@ class12 = [
     'taroyannatali@shirakatsy.am',
 ]
 
+tos = ['AllahverdyanAren@shirakatsy.am','yeganyanarsen@shirakatsy.am']
+'''
 tos = []
 tos.extend(class8)
 tos.extend(class9)
 tos.extend(class10)
 tos.extend(class11)
 tos.extend(class12)
-
-temp = []
-
-print(sorted(list(set(temp))))
-print(len(class12))
+'''

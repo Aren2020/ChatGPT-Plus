@@ -9,7 +9,7 @@ from backend_api.actions.slidecreater import slidegptmaker
 from backend_api.actions.translator import translateTo
 from backend_api.actions.namegenerator import nameGenerator
 
-openai.api_key = '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'
+openai.api_key = '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'
 # git commit 
 def getcontent(message):
     message = translateTo(message,'en',source='auto')[0]

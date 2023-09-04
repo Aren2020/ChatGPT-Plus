@@ -207,8 +207,10 @@ for item in dict:
         print('words')
 '''
 
-name = 'essaywriter'
-names = ['essaywriter','slidecretor']
+import time
+start = time.time()
+print(time.sleep(10.0))
+end = time.time()
+print(end - start)
 
-if name in names:
-    print('add params')
+
