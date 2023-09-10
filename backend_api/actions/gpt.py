@@ -9,7 +9,7 @@ from backend_api.actions.slidecreater import slidegptmaker
 from backend_api.actions.translator import translateTo
 from backend_api.actions.namegenerator import nameGenerator
 
-openai.api_key = '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'
+openai.api_key = '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'
 # git commit 
 def getcontent(message):
     message = translateTo(message,'en',source='auto')[0]
@@ -83,9 +83,9 @@ def communityProjectCreator(title,language = 'en'):
     content = wordCreater(response.split('\n'),language)
     return content, type
     
-def getslidecontent(title,language='en'):
+def getslidecontent(title,slidecount,language='en'):
     message = f'''create slideshow with this strict criteria about {title}.
-    SlideShow should contain 5 slides.Each slide start with title then come description and one picture.
+    SlideShow should contain {slidecount} slides.Each slide start with title then come description and one picture.
     Each description should contain 25 words
     Slideshow should not have conclusion and intruduction.
     And use "picture:  "  instead of [Insert an image'''
@@ -124,16 +124,9 @@ def imageGenerator(text,size = '1024x1024'):
     return image_url, 'text'
 
 def grammarCorrection(text,language='English'):
-    response = openai.ChatCompletion.create(
-        model="gpt-3.5-turbo-16k",
-        messages=[{
-            'role': 'user',
-            'user': f'You will be provided with statements, and your task is to convert them to standard {language} and correct the wrong words. {text}',
-            }],
-        temperature=0,
-        max_tokens=15000
-    )
-    return response, 'text'
+    message = f'You will be provided with statements, and your task is to convert them to standard {language} and correct the wrong words. {text}'
+    response,type = getcontent(message)
+    return response, type
 
 def informatics(problem,language = 'c++'):
     problem = translateTo(problem,'en',source = 'auto')

@@ -1,3 +1,4 @@
+'''
 import smtplib
 from email.message import EmailMessage
 import mailconfig
@@ -15,8 +16,8 @@ print('Ok')
 
 print('message generator...  ',end='')   
 msg = EmailMessage()
-text = '''Test 1: Start of end'''
-msg['Subject'] = f'The contents of [number]'
+text = """Test 1A: Start QWERTY"""
+msg['Subject'] = 'Test 1A'
 msg['From'] = sender
 msg.set_content(text)
 print('Ok')
@@ -24,9 +25,15 @@ print('Ok')
 print('loggining...  ',end='')
 server.login(sender,pswd)
 print('Ok')
+msg['To'] = tos
+server.send_message(msg)
+
+"""
 for (index,mail) in enumerate(tos):      
     print(f'sending to {mail}... ',end='')
-    msg['To'] = tos
-    server.send_message(msg)
+    #msg['To'] = mail
+    #server.send_message(msg)
     del msg['To']
     print('Ok')
+"""
+'''
