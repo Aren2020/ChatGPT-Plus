@@ -4,7 +4,6 @@
 *.pyc
 __pycache__
 # db.sqlite3 #
-media
 
 # Backup files # 
 *.bak 
@@ -137,3 +136,6 @@ GitHub.sublime-settings
 .history
 
 # docx mp3 pptx txt format ignore #
+*.docx
+*.mp3
+*.pptx
