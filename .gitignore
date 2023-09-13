@@ -137,6 +137,6 @@ GitHub.sublime-settings
 .history
 
 # docx mp3 pptx txt format ignore #
-*.pptx
-*.docx
-*.mp3
+# *.pptx #
+# *.docx #
+# *.mp3 #
