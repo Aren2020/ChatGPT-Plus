@@ -114,7 +114,7 @@ def text_to_speech(text,language = 'en'):
     speech.save(savepath)
     return savepath,'mp3'
 
-def imageGenerator(text,size = '1024x1024'):
+def imageGenerator(text,size='512*512'):
     response = openai.Image.create(
         prompt = text,
         n = 1,
