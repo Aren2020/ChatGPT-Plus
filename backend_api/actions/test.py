@@ -214,16 +214,3 @@ print(time.sleep(10.0))
 end = time.time()
 print(end - start)
 '''
-
-import win32com.client as win32
-
-olApp = win32.Dispatch('Outlook.Application')
-olNS = olApp.GetNameSpace('MAPI')
-
-mailItem = olApp.CreateItem(0)
-mailItem.Subject = 'Test 1A'
-mailItem.BodyFormat = 1
-mailItem.Body = 'Successfully sending first mail'
-mailItem.To = 'AllahverdyanAren@shirakatsy.am'
-
-mailItem.display()
