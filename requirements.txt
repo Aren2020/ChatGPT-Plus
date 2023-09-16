@@ -23,7 +23,6 @@ pypiwin32==223
 python-docx==0.8.11
 pyttsx3==2.90
 pytz==2023.3
-pywin32==306
 requests==2.31.0
 soupsieve==2.4.1
 SpeechRecognition==3.10.0
