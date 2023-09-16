@@ -6,6 +6,7 @@ attrs==23.1.0
 beautifulsoup4==4.12.2
 certifi==2023.7.22
 charset-normalizer==3.2.0
+click==8.1.7
 colorama==0.4.6
 comtypes==1.2.0
 deep-translator==1.11.4
@@ -14,6 +15,7 @@ django-cors-headers==4.2.0
 django-multiselectfield==0.1.12
 djangorestframework==3.14.0
 frozenlist==1.4.0
+gTTS==2.3.2
 idna==3.4
 lxml==4.9.3
 multidict==6.0.4
@@ -21,14 +23,18 @@ openai==0.27.8
 Pillow==10.0.0
 pypiwin32==223
 python-docx==0.8.11
+python-pptx==0.6.21
 pyttsx3==2.90
+pyttsx4==3.0.15
 pytz==2023.3
 pywin32==306
 requests==2.31.0
+six==1.16.0
 soupsieve==2.4.1
 SpeechRecognition==3.10.0
 sqlparse==0.4.4
 tqdm==4.66.1
 tzdata==2023.3
 urllib3==2.0.4
+XlsxWriter==3.1.2
 yarl==1.9.2
