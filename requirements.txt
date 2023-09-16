@@ -19,8 +19,6 @@ lxml==4.9.3
 multidict==6.0.4
 openai==0.27.8
 Pillow==10.0.0
-pypiwin32==223
-pywin32==306
 python-docx==0.8.11
 pyttsx3==2.90
 pytz==2023.3
