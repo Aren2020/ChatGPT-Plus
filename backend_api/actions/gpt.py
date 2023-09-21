@@ -1,5 +1,5 @@
 import openai
-import os
+import os,time
 from gtts import gTTS
 
 from backend_api.actions.wordcreater import wordCreater
@@ -8,21 +8,63 @@ from backend_api.actions.removetrashes import removeTrash
 from backend_api.actions.slidecreater import slidegptmaker
 from backend_api.actions.translator import translateTo
 from backend_api.actions.namegenerator import nameGenerator
+from backend_api.models import ApiStatus
+from rest_framework.response import Response
 
-openai.api_key = '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'
+def now():
+    return time.time()
+
+def minuteleft(starttime,now):
+    return now-float(starttime) > 60.0
+
+def getAllowedApiKey():
+    api_objects = ApiStatus.objects.filter(disable = False)
+    if not api_objects:
+        return 'AllApiIsDisable'
+    for api_object in api_objects:
+        if api_object.trycount == 0:
+            api_object.trycount+=1
+            api_object.starttime = now()
+            api_object.save()
+            return api_object.api
+        if minuteleft(api_object.starttime, now()):
+            api_object.trycount = 1
+            api_object.status = True
+            api_object.starttime = now()
+            api_object.save()
+            return api_object.api
+        if api_object.trycount < 3:
+            api_object.trycount+=1
+            api_object.save()
+            return api_object.api
+        if api_object.trycount == 3:
+            api_object.status = False
+            api_object.save()
+    else:
+        return 'RateLimit'
 
 def getcontent(message):
+    api = getAllowedApiKey()
+    if api in ('RateLimit','AllApiIsDisable'):
+        return api,'text' # Response({'message': 'Api-keys left try letter'})
+    openai.api_key = api
     message = translateTo(message,'en',source='auto')[0]
     msgs = []
     msgs.append(
-            {'role':'user',
-             'content':message})
-    response = openai.ChatCompletion.create(
-        model='gpt-3.5-turbo-16k',
-        messages = msgs,
-        temperature = 0.2,
-        max_tokens = 1024,
-    )
+            {'role': 'user',
+             'content': message})
+    try:
+        response = openai.ChatCompletion.create(
+            model='gpt-3.5-turbo-16k',
+            messages = msgs,
+            temperature = 0.2,
+            max_tokens = 1024,
+        )
+    except:
+        api_object = ApiStatus.objects.get(api = api)
+        api_object.disable = True
+        api_object.save()
+        return getcontent(message)
     content = response['choices'][0]['message']['content']
     return content,'text'
 
@@ -35,6 +77,8 @@ def essaywriter(title,words=400,language='en'):
     And give links which you use in the bottom.
     '''
     response, type = getcontent(message)
+    if response in ('RateLimit','AllApiIsDisable'):
+        return response,'text'
     content = wordCreater(response.split('\n'),language)
     return content, type
 
@@ -64,6 +108,8 @@ def personalprojectwriter(title,language='en'):
     responses = []
     for message in messages:
         response, type = getcontent(message)
+        if response in ('RateLimit','AllApiIsDisable'):
+            return response,type
         responses.append(response)
     response = '\n'.join(responses)
     content = wordCreater(response.split('\n'),language)
@@ -80,6 +126,8 @@ def communityProjectCreator(title,language = 'en'):
     The third part should contain Also describe the difficulties, and obstacles you faced and who you collaborated with in implementing the community project. Forth part should contain Assessing the quality of your end result What went well, and what would you change the next time you do the job, What skills (ATL skills) have you developed within the community project  and What qualities of MB student characteristics have you developed
     '''
     response,type = getcontent(message)
+    if response in ('RateLimit','AllApiIsDisable'):
+        return response, type
     content = wordCreater(response.split('\n'),language)
     return content, type
     
@@ -91,9 +139,14 @@ def getslidecontent(title,slidecount,language='en'):
     And use "picture:  "  instead of [Insert an image'''
     
     response,type = getcontent(message)
+    if response in ('RateLimit','AllApiIsDisable'):
+        return response,type
     content = handleGptSlide(response)
     content = removeTrash(content,'')
-    links = splitlinks(getcontent(f'which books do you use when you write essay about {title}')[0])
+    linkresponse = getcontent(f'which books do you use when you write essay about {title}')[0]
+    if linkresponse in ('RateLimit','AllApiIsDisable'):
+        return linkresponse,type
+    links = splitlinks(linkresponse)
     url = slidegptmaker(content,links,language,title=title)
     return url, 'pptx'
 
@@ -126,6 +179,8 @@ def imageGenerator(text,size='512*512'):
 def grammarCorrection(text,language='English'):
     message = f'You will be provided with statements, and your task is to convert them to standard {language} and correct the wrong words. {text}'
     response,type = getcontent(message)
+    if response in ('RateLimit','AllApiIsDisable'):
+        return response,type
     return response, type
 
 def informatics(problem,language = 'c++'):
@@ -136,6 +191,9 @@ def informatics(problem,language = 'c++'):
     else:
         message += f'in {language}.'
     message += 'Dont use explanations. Give one solution example.'
-
-    savepath = wordCreater(getcontent(message)[0].split('\n'),'en')
+    
+    response = getcontent(message)[0]
+    if response in ('RateLimit','AllApiIsDisable'):
+        return response,'text'
+    savepath = wordCreater(response.split('\n'),'en')
     return savepath,'docx'

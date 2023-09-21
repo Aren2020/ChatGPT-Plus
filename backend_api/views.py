@@ -5,6 +5,7 @@ from rest_framework.response import Response
 from django.http import HttpResponse
 from .serializer import SimpleSectionSerializer
 from rest_framework import generics
+from rest_framework.decorators import api_view
 from backend_api.actions.gpt import (getcontent,
                                      essaywriter,
                                      personalprojectwriter,
@@ -18,6 +19,8 @@ from backend_api.actions.gpt import (getcontent,
                                      informatics
                                     )
 from deep_translator import GoogleTranslator
+from .models import ApiStatus
+import time
 
 FUNC_FOR_MODELS = {
     1: getcontent, # gpt
@@ -40,7 +43,7 @@ FORMAT_CONTENT_TYPES = {
 }
 
 class SectionDetailsView(APIView):
-    def get(self,request,slug = 'gpt-response'):
+    def get(self,request,slug = 'chat-gpt'):
         output = [
             {
                 'sections': [],
@@ -57,7 +60,7 @@ class SectionDetailsView(APIView):
             output[0]['sections'].append(section_config)
         return Response(output)
 
-    def post(self,request,slug = 'gpt-response'): 
+    def post(self,request,slug = 'chat-gpt'): 
         arr = []
         for key in request.data:
             if key != 'active':
@@ -67,10 +70,15 @@ class SectionDetailsView(APIView):
         
         section = Section.objects.get(slug = slug)
         action = FUNC_FOR_MODELS[section.pk]
-        
         data,format = action(*arr) 
+        
+        if data == 'RateLimit':
+            return Response({'status': 'RateLimit'})
+        if data == 'AllApiIsDisable':
+            return Response({'status': 'AllApiIsDisable'})
         if format == 'text':
-            return Response({'message': data})  
+            return Response({'message': data, 
+                             'status': 'Ok'})  
         else:
             with open(data, 'rb') as file:
                 response = HttpResponse(file.read(), content_type = FORMAT_CONTENT_TYPES[format])

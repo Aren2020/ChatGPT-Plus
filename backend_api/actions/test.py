@@ -214,3 +214,26 @@ print(time.sleep(10.0))
 end = time.time()
 print(end - start)
 '''
+
+from models import ApiStatus
+import time
+
+def getAllowedApiKey():
+    api_objects = ApiStatus.objects.filter(disable = False)
+    for api_object in api_objects:
+        if api_object.trycount == 0:
+            api_object.trycount+=1
+            api_object.starttime = time.time()
+            return api_object.api
+        if api_object.trycount < 2:
+            api_object.trycount+=1
+            return api_object.api
+        if api_object.trycount == 3:
+            if time.time() - api_object.starttime > 60:
+                api_object.status = True
+                api_object.trycount = 1
+                api_object.starttime = time.time()
+        if api_object.status:
+            api_object.trycount+=1
+
+print(getAllowedApiKey())
