@@ -12,7 +12,7 @@ class Section(models.Model):
         super().save(*args, **kwargs)
 
 class ApiStatus(models.Model):
-    api = models.CharField(max_length = 50)
+    api = models.CharField(max_length = 200)
     starttime = models.CharField(default = 'NONTOUCH', max_length = 50)
     trycount = models.IntegerField(default = 0) 
     status = models.BooleanField(default = True)

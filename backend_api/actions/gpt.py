@@ -11,6 +11,8 @@ from backend_api.actions.namegenerator import nameGenerator
 from backend_api.models import ApiStatus
 from rest_framework.response import Response
 
+# openai.api_key = 'sk-LBctJ0BRa5NZdeFketkAT3BlbkFJrvuhEiuqxz1689Fb26P'
+
 def now():
     return time.time()
 
@@ -53,18 +55,18 @@ def getcontent(message):
     msgs.append(
             {'role': 'user',
              'content': message})
-    try:
-        response = openai.ChatCompletion.create(
-            model='gpt-3.5-turbo-16k',
-            messages = msgs,
-            temperature = 0.2,
-            max_tokens = 1024,
-        )
-    except:
-        api_object = ApiStatus.objects.get(api = api)
-        api_object.disable = True
-        api_object.save()
-        return getcontent(message)
+    #try:
+    response = openai.ChatCompletion.create(
+        model='gpt-3.5-turbo-16k',
+        messages = msgs,
+        temperature = 0.2,
+        max_tokens = 1024,
+    )
+    # except:
+    #     api_object = ApiStatus.objects.get(api = api)
+    #     api_object.disable = True
+    #     api_object.save()
+    #     return getcontent(message)
     content = response['choices'][0]['message']['content']
     return content,'text'
 
