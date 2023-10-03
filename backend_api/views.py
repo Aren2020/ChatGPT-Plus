@@ -77,8 +77,7 @@ class SectionDetailsView(APIView):
         if data == 'AllApiIsDisable':
             return Response({'status': 'AllApiIsDisable'})
         if format == 'text':
-            return Response({'message': data, 
-                             'status': 'Ok'})  
+            return Response({'message': data})  
         else:
             with open(data, 'rb') as file:
                 response = HttpResponse(file.read(), content_type = FORMAT_CONTENT_TYPES[format])

@@ -169,7 +169,11 @@ def text_to_speech(text,language = 'en'):
     speech.save(savepath)
     return savepath,'mp3'
 
-def imageGenerator(text,size='512*512'):
+def imageGenerator(text,size='512x512'):
+    api = getAllowedApiKey()
+    if api in ('RateLimit','AllApiIsDisable'):
+        return api,'text' # Response({'message': 'Api-keys left try letter'})
+    openai.api_key = api
     response = openai.Image.create(
         prompt = text,
         n = 1,
