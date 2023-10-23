@@ -82,7 +82,7 @@ def essaywriter(title,words=400,language='en'):
     if response in ('RateLimit','AllApiIsDisable'):
         return response,'text'
     content = wordCreater(response.split('\n'),language)
-    return content, type
+    return content, 'docx'
 
 def personalprojectwriter(title,language='en'):
     message =  '''I am writing my personal project about a %s.
@@ -115,7 +115,7 @@ def personalprojectwriter(title,language='en'):
         responses.append(response)
     response = '\n'.join(responses)
     content = wordCreater(response.split('\n'),language)
-    return content,type
+    return content, 'docx'
 
 def communityProjectCreator(title,language = 'en'):
     title = translateTo(title,'en',source='auto')
@@ -131,7 +131,7 @@ def communityProjectCreator(title,language = 'en'):
     if response in ('RateLimit','AllApiIsDisable'):
         return response, type
     content = wordCreater(response.split('\n'),language)
-    return content, type
+    return content, 'docx'
     
 def getslidecontent(title,slidecount,language='en'):
     message = f'''create slideshow with this strict criteria about {title}.
@@ -202,4 +202,4 @@ def informatics(problem,language = 'c++'):
     if response in ('RateLimit','AllApiIsDisable'):
         return response,'text'
     savepath = wordCreater(response.split('\n'),'en')
-    return savepath,'docx'
+    return savepath, 'docx'
