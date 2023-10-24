@@ -1,1 +1,1 @@
-web gunicorn backend.wsgi:application --log-file -
+web: gunicorn channelList.wsgi --timeout 120 --keep-alive 5 --log-level debug --log-file -
