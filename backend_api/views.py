@@ -73,9 +73,10 @@ class SectionDetailsView(APIView):
         data,format = action(*arr) 
         
         if data == 'RateLimit':
-            return Response({'status': 'RateLimit'})
+            return Response({'message': 'Rate limit exceeded! Please try again later.'})
         if data == 'AllApiIsDisable':
-            return Response({'status': 'AllApiIsDisable'})
+            
+            return Response({'message': 'All access to the service is denied! Please try again later.'})
         if format == 'text':
             return Response({'message': data})  
         else:

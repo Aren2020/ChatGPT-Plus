@@ -10,10 +10,8 @@ click==8.1.7
 colorama==0.4.6
 comtypes==1.2.0
 deep-translator==1.11.4
-dj-database-url==2.1.0
 Django==4.2.4
 django-cors-headers==4.2.0
-django-heroku==0.3.1
 django-multiselectfield==0.1.12
 djangorestframework==3.14.0
 frozenlist==1.4.0
@@ -26,11 +24,13 @@ openai==0.27.8
 packaging==23.1
 Pillow==10.0.0
 psycopg2==2.9.7
+pypiwin32==223
 python-docx==0.8.11
 python-pptx==0.6.21
 pyttsx3==2.90
 pyttsx4==3.0.15
 pytz==2023.3
+pywin32==306
 requests==2.31.0
 six==1.16.0
 soupsieve==2.4.1
