@@ -1,13 +1,27 @@
 {
-    "builds": [{
-        "src": "backend/wsgi.py",
-        "use": "@vercel/python",
-        "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" }
-    }],
+    "name": "your-project-name",
+    "version": 2,
+    "builds": [
+      {
+        "src": "backend",
+        "use": "@now/python",
+        "config": { "maxLambdaSize": "50mb" }
+      }
+    ],
     "routes": [
-        {
-            "src": "/(.*)",
-            "dest": "backend/wsgi.py"
-        }
-    ]
-}
+      { "src": "/admin", "dest": "backend" },
+      { "src": "/media/(.*)", "dest": "backend/media/$1" },
+      { "src": "/static/(.*)", "dest": "backend/static/$1" },
+      { "src": "/api/(.*)", "dest": "backend" },
+      { "src": "/(.*)", "dest": "backend/$1" }
+    ],
+    "env": {
+      "SECRET_KEY": "your-secret-key",
+      "DJANGO_SETTINGS_MODULE": "backend.settings",
+      "DEBUG": "false"
+    },
+    "build": {
+      "env": { "PIPENV_VERBOSITY": "-1" }
+    },
+    "public": true
+  }
