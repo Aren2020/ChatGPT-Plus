@@ -1,6 +1,8 @@
 # My First Site
+Frontend - https://github.com/arsenyeganyan/gpt-shirakatsy 
+Backend  - https://github.com/Aren2020/ShirGpt
 
-This project is a web application that leverages the power of OpenAI to provide various functionalities such as content generation, translation, text-to-speech, image generation, and more. Built using Django and Django Rest Framework (DRF), it demonstrates the integration of AI-based features to enhance user experience.
+This project is a web application that leverages the power of OpenAI to provide various functionalities such as content generation, translation, text-to-speech, image generation, and more. Built using Django and Django Rest Framework (DRF), it demonstrates the integration of AI-based features to enhance user experience. 
 
 ## Features
 
