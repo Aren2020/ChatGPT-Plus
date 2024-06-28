@@ -36,7 +36,7 @@ This project is a web application that leverages the power of OpenAI to provide 
    - git clone https://github.com/Aren2020/BookMarkWeb.git
 2. **Create and activate a virtual environment:**
    - python -m venv env
-   - source env/bin/activate
+   - source venv/bin/activate
 3. **Install the dependencies:** 
    - pip install -r requirements.txt
 4. **Apply migrations:**
